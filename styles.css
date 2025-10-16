@@ -482,6 +482,9 @@ section {
    About Section
    =============================================== */
 .section-about {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: var(--section-padding);
     background: rgba(22, 33, 62, 0.95);
     backdrop-filter: blur(10px);
@@ -609,6 +612,9 @@ section {
    Experience Section
    =============================================== */
 .section-experience {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: var(--section-padding);
     background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
@@ -723,6 +729,9 @@ section {
    Skills Section
    =============================================== */
 .section-skills {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: var(--section-padding);
     background: rgba(22, 33, 62, 0.95);
     backdrop-filter: blur(10px);
@@ -791,6 +800,9 @@ section {
    Projects Section
    =============================================== */
 .section-projects {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: var(--section-padding);
     background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
@@ -882,6 +894,9 @@ section {
    Certifications Section
    =============================================== */
 .section-certifications {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: var(--section-padding);
     background: rgba(22, 33, 62, 0.95);
     backdrop-filter: blur(10px);
@@ -1013,6 +1028,9 @@ section {
    Contact Section
    =============================================== */
 .section-contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
     padding: var(--section-padding);
     background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
