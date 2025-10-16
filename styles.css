@@ -72,10 +72,14 @@ select, .stat-item, .education-item, .timeline-content, .goal-item,
 }
 
 /* Ensure content is above background */
-#navbar,
+#navbar {
+    position: relative;
+    z-index: 1000;
+}
+
 section {
     position: relative;
-    z-index: 1;
+    z-index: 10;
 }
 
 /* ===============================================
@@ -479,7 +483,7 @@ section {
    =============================================== */
 .section-about {
     padding: var(--section-padding);
-    background: rgba(22, 33, 62, 0.7);
+    background: rgba(22, 33, 62, 0.95);
     backdrop-filter: blur(10px);
 }
 
@@ -606,7 +610,7 @@ section {
    =============================================== */
 .section-experience {
     padding: var(--section-padding);
-    background: rgba(26, 26, 46, 0.6);
+    background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
 }
 
@@ -720,7 +724,7 @@ section {
    =============================================== */
 .section-skills {
     padding: var(--section-padding);
-    background: rgba(22, 33, 62, 0.7);
+    background: rgba(22, 33, 62, 0.95);
     backdrop-filter: blur(10px);
 }
 
@@ -788,7 +792,7 @@ section {
    =============================================== */
 .section-projects {
     padding: var(--section-padding);
-    background: rgba(26, 26, 46, 0.6);
+    background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
 }
 
@@ -879,7 +883,7 @@ section {
    =============================================== */
 .section-certifications {
     padding: var(--section-padding);
-    background: rgba(22, 33, 62, 0.7);
+    background: rgba(22, 33, 62, 0.95);
     backdrop-filter: blur(10px);
 }
 
@@ -1010,7 +1014,7 @@ section {
    =============================================== */
 .section-contact {
     padding: var(--section-padding);
-    background: rgba(26, 26, 46, 0.6);
+    background: rgba(26, 26, 46, 0.95);
     backdrop-filter: blur(10px);
 }
 
