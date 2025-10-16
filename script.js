@@ -6,6 +6,239 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     // ===============================================
+    // Animated Background with Particles
+    // ===============================================
+    const canvas = document.getElementById('background-canvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size
+    function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Particle class
+    class Particle {
+        constructor() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.vx = (Math.random() - 0.5) * 0.5;
+            this.vy = (Math.random() - 0.5) * 0.5;
+            this.radius = Math.random() * 2 + 1;
+        }
+
+        update() {
+            this.x += this.vx;
+            this.y += this.vy;
+
+            // Bounce off edges
+            if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+            if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            ctx.fillStyle = 'rgba(255, 107, 53, 0.5)';
+            ctx.fill();
+        }
+    }
+
+    // Create particles
+    const particlesArray = [];
+    const numberOfParticles = 80;
+
+    for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+    }
+
+    // Mouse interaction
+    let mouse = {
+        x: null,
+        y: null,
+        radius: 150
+    };
+
+    window.addEventListener('mousemove', function(event) {
+        mouse.x = event.x;
+        mouse.y = event.y;
+    });
+
+    window.addEventListener('mouseout', function() {
+        mouse.x = null;
+        mouse.y = null;
+    });
+
+    // Draw connections between particles
+    function connectParticles() {
+        for (let a = 0; a < particlesArray.length; a++) {
+            for (let b = a + 1; b < particlesArray.length; b++) {
+                const dx = particlesArray[a].x - particlesArray[b].x;
+                const dy = particlesArray[a].y - particlesArray[b].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < 120) {
+                    const opacity = 1 - (distance / 120);
+                    ctx.strokeStyle = `rgba(255, 107, 53, ${opacity * 0.3})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                    ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    // Connect particles to mouse
+    function connectToMouse() {
+        if (mouse.x && mouse.y) {
+            for (let i = 0; i < particlesArray.length; i++) {
+                const dx = mouse.x - particlesArray[i].x;
+                const dy = mouse.y - particlesArray[i].y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+
+                if (distance < mouse.radius) {
+                    const opacity = 1 - (distance / mouse.radius);
+                    ctx.strokeStyle = `rgba(247, 147, 30, ${opacity * 0.5})`;
+                    ctx.lineWidth = 2;
+                    ctx.beginPath();
+                    ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+
+                    // Push particles away from mouse
+                    const force = (mouse.radius - distance) / mouse.radius;
+                    const angle = Math.atan2(dy, dx);
+                    particlesArray[i].x -= Math.cos(angle) * force * 2;
+                    particlesArray[i].y -= Math.sin(angle) * force * 2;
+                }
+            }
+
+            // Draw glow at mouse position
+            const gradient = ctx.createRadialGradient(mouse.x, mouse.y, 0, mouse.x, mouse.y, mouse.radius);
+            gradient.addColorStop(0, 'rgba(255, 107, 53, 0.15)');
+            gradient.addColorStop(1, 'rgba(255, 107, 53, 0)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+        }
+    }
+
+    // Animation loop
+    function animateBackground() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw and update particles
+        for (let i = 0; i < particlesArray.length; i++) {
+            particlesArray[i].update();
+            particlesArray[i].draw();
+        }
+
+        connectParticles();
+        connectToMouse();
+
+        requestAnimationFrame(animateBackground);
+    }
+
+    animateBackground();
+
+    // ===============================================
+    // Custom Cursor
+    // ===============================================
+    const cursor = document.createElement('div');
+    const cursorDot = document.createElement('div');
+    const cursorBubble = document.createElement('div');
+    cursor.classList.add('custom-cursor');
+    cursorDot.classList.add('custom-cursor-dot');
+    cursorBubble.classList.add('cursor-bubble');
+    document.body.appendChild(cursor);
+    document.body.appendChild(cursorDot);
+    document.body.appendChild(cursorBubble);
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let cursorX = 0;
+    let cursorY = 0;
+    let dotX = 0;
+    let dotY = 0;
+    let bubbleX = 0;
+    let bubbleY = 0;
+
+    // Track mouse position
+    document.addEventListener('mousemove', function(e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+    });
+
+    // Smooth cursor animation
+    function animateCursor() {
+        // Cursor follows with delay
+        cursorX += (mouseX - cursorX) * 0.15;
+        cursorY += (mouseY - cursorY) * 0.15;
+
+        // Dot follows immediately
+        dotX += (mouseX - dotX) * 0.3;
+        dotY += (mouseY - dotY) * 0.3;
+
+        // Bubble follows with more delay (slower)
+        bubbleX += (mouseX - bubbleX) * 0.08;
+        bubbleY += (mouseY - bubbleY) * 0.08;
+
+        cursor.style.left = cursorX + 'px';
+        cursor.style.top = cursorY + 'px';
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        cursorBubble.style.left = bubbleX + 'px';
+        cursorBubble.style.top = bubbleY + 'px';
+
+        requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // Hover effect on interactive elements
+    const hoverElements = document.querySelectorAll('a, button, .btn, .project-card, .cert-card, .skill-category, .tag, .nav-link');
+
+    hoverElements.forEach(element => {
+        element.addEventListener('mouseenter', function() {
+            cursor.classList.add('hover');
+            cursorDot.classList.add('hover');
+            cursorBubble.classList.add('hover');
+        });
+
+        element.addEventListener('mouseleave', function() {
+            cursor.classList.remove('hover');
+            cursorDot.classList.remove('hover');
+            cursorBubble.classList.remove('hover');
+        });
+    });
+
+    // Click effect
+    document.addEventListener('mousedown', function() {
+        cursor.classList.add('click');
+        cursorDot.style.transform = 'translate(-50%, -50%) scale(1.5)';
+    });
+
+    document.addEventListener('mouseup', function() {
+        cursor.classList.remove('click');
+        cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+    });
+
+    // Hide cursor when leaving window
+    document.addEventListener('mouseleave', function() {
+        cursor.style.opacity = '0';
+        cursorDot.style.opacity = '0';
+        cursorBubble.style.opacity = '0';
+    });
+
+    document.addEventListener('mouseenter', function() {
+        cursor.style.opacity = '1';
+        cursorDot.style.opacity = '1';
+        cursorBubble.style.opacity = '0.8';
+    });
+
+    // ===============================================
     // Navigation Scroll Effect
     // ===============================================
     const navbar = document.getElementById('navbar');
@@ -106,25 +339,28 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // ===============================================
-    // Intersection Observer for Scroll Animations
+    // Intersection Observer for Scroll Animations (Repeatable)
     // ===============================================
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -100px 0px'
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
     };
 
+    // Create observer that does NOT unobserve (allows repeat animations)
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in');
-                observer.unobserve(entry.target);
+                entry.target.classList.add('animate-in');
+            } else {
+                // Remove animation class when element leaves viewport
+                entry.target.classList.remove('animate-in');
             }
         });
     }, observerOptions);
 
-    // Observe elements for animation
+    // Observe all sections and their children for animation
     const animateElements = document.querySelectorAll(
-        '.timeline-item, .project-card, .cert-card, .skill-category, .stat-item, .education-item'
+        'section, .timeline-item, .project-card, .cert-card, .skill-category, .stat-item, .education-item, .contact-item, .about-text, .about-education, .section-title'
     );
 
     animateElements.forEach(element => {
