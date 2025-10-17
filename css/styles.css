@@ -153,6 +153,22 @@ section {
     .cursor-bubble {
         display: none;
     }
+
+    /* Make all animated elements visible by default on mobile */
+    section,
+    .timeline-item,
+    .project-card,
+    .cert-card,
+    .skill-category,
+    .stat-item,
+    .education-item,
+    .contact-item,
+    .about-text,
+    .about-education,
+    .section-title {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
 }
 
 .container {
