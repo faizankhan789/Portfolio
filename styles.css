@@ -372,6 +372,26 @@ section {
     transform: translateY(-3px);
 }
 
+.btn-download {
+    background: var(--card-bg);
+    color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-download:hover {
+    background: var(--secondary-color);
+    color: var(--text-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 25px rgba(247, 147, 30, 0.4);
+}
+
+.btn-download i {
+    font-size: 14px;
+}
+
 .social-links {
     display: flex;
     gap: 20px;
@@ -856,6 +876,31 @@ section {
     flex-grow: 1;
 }
 
+.project-metrics {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding: 15px;
+    background: var(--hover-bg);
+    border-radius: 10px;
+    border-left: 3px solid var(--primary-color);
+}
+
+.metric {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.metric i {
+    color: var(--primary-color);
+    font-size: 14px;
+}
+
 .project-tech {
     display: flex;
     flex-wrap: wrap;
@@ -891,6 +936,20 @@ section {
 .project-link:hover {
     color: var(--secondary-color);
     transform: translateX(5px);
+}
+
+.demo-link {
+    color: var(--secondary-color);
+    padding: 8px 16px;
+    background: rgba(247, 147, 30, 0.1);
+    border-radius: 8px;
+    border: 1px solid var(--secondary-color);
+}
+
+.demo-link:hover {
+    background: var(--secondary-color);
+    color: var(--text-primary);
+    transform: translateY(-2px);
 }
 
 /* ===============================================
