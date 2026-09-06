@@ -1,1125 +1,567 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Muhammad Faizan Khan - Machine Learning Engineer & AI Specialist. Computer Vision, Deep Learning, and AI Solutions.">
-    <meta name="keywords" content="Machine Learning Engineer, AI Specialist, Computer Vision, Deep Learning, TensorFlow, PyTorch, YOLO, Neural Networks">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Muhammad Faizan Khan is an AI Engineer building production LLM/VLM pipelines, computer vision systems, agentic RAG workflows, and generative imaging products.">
+    <meta name="keywords" content="Muhammad Faizan Khan, AI Engineer, LLM, VLM, Computer Vision, Generative AI, RAG, Agentic AI, MLOps, Python">
     <meta name="author" content="Muhammad Faizan Khan">
-    <title>Muhammad Faizan Khan | ML Engineer & AI Specialist</title>
-    <link rel="shortcut icon" type="image/x-icon" href="assets/favicons/favicon.ico">
+    <meta name="theme-color" content="#080d14">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Muhammad Faizan Khan | AI Engineer">
+    <meta property="og:description" content="Production AI systems across language, vision, retrieval, and generative media.">
+    <meta property="og:image" content="assets/images/img.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Muhammad Faizan Khan | AI Engineer</title>
+
+    <link rel="shortcut icon" href="assets/favicons/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicons/favicon-16x16.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/favicons/apple-touch-icon.png">
-    <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Muhammad Faizan Khan",
+        "jobTitle": "AI Engineer",
+        "description": "AI Engineer specializing in production LLM/VLM pipelines, computer vision, RAG, agentic AI, and generative imaging.",
+        "email": "mailto:faizankhan58396@gmail.com",
+        "telephone": "+92 3174558424",
+        "url": "https://github.com/faizankhan789",
+        "sameAs": [
+            "https://www.linkedin.com/in/muhamad-faizan-khan-13656b1a0/",
+            "https://github.com/faizankhan789"
+        ],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Qarshi University"
+        },
+        "knowsAbout": [
+            "Large Language Models",
+            "Vision-Language Models",
+            "Computer Vision",
+            "Retrieval-Augmented Generation",
+            "Agentic AI",
+            "Stable Diffusion",
+            "MLOps"
+        ]
+    }
+    </script>
 </head>
 <body>
-    <!-- Animated Background Canvas -->
-    <canvas id="background-canvas"></canvas>
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
+    <div class="ambient ambient-one" aria-hidden="true"></div>
+    <div class="ambient ambient-two" aria-hidden="true"></div>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#home">FK</a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#home" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#experience" class="nav-link">Experience</a></li>
-                <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#projects" class="nav-link">Projects</a></li>
-                <li><a href="#certifications" class="nav-link">Certifications</a></li>
-                <li><a href="#contact" class="nav-link">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Home Section -->
-    <section id="home" class="section-home">
-        <div class="container">
-            <div class="home-content">
-                <div class="home-text">
-                    <p class="greeting">Hello, I'm</p>
-                    <h1 class="name">Muhammad <span class="highlight">Faizan Khan</span></h1>
-                    <h2 class="title">Machine Learning Engineer & AI Specialist</h2>
-                    <p class="subtitle">Building intelligent systems with Computer Vision and Deep Learning</p>
-                    <div class="cta-buttons">
-                        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-                        <a href="#projects" class="btn btn-secondary">View My Work</a>
-                        <a href="Resume.pdf" download class="btn btn-download">
-                            <i class="fas fa-download"></i> Download Resume
-                        </a>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/muhamad-faizan-khan-13656b1a0/" target="_blank" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://github.com/faizankhan789" target="_blank" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                        <a href="mailto:faizankhan58396@gmail.com" aria-label="Email">
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                        <a href="tel:+923174558424" aria-label="Phone">
-                            <i class="fas fa-phone"></i>
-                        </a>
-                    </div>
-                </div>
-                <div class="home-image">
-                    <div class="image-wrapper">
-                        <img src="assets/images/img.png" alt="Muhammad Faizan Khan" class="profile-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <a href="#about">
-                <i class="fas fa-chevron-down"></i>
+    <header class="site-header" id="site-header">
+        <nav class="nav container" aria-label="Primary navigation">
+            <a class="brand" href="#home" aria-label="Faizan Khan, home">
+                <span class="brand-mark" aria-hidden="true">FK</span>
+                <span class="brand-name">Faizan Khan</span>
             </a>
-        </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section-about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p class="intro">
-                        A Computer Science graduate specializing in <strong>Machine Learning and Artificial Intelligence</strong>,
-                        driven by a passion for exploring the intricacies of AI and its real-world applications.
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open navigation">
+                <span></span>
+                <span></span>
+            </button>
+
+            <div class="nav-menu" id="nav-menu">
+                <a class="nav-link active" href="#expertise">Expertise</a>
+                <a class="nav-link" href="#experience">Experience</a>
+                <a class="nav-link" href="#work">Work</a>
+                <a class="nav-link" href="#skills">Stack</a>
+                <a class="nav-link" href="#credentials">Credentials</a>
+                <a class="nav-cta" href="#contact">Start a conversation</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <section class="hero section" id="home">
+            <div class="hero-grid container">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow"><span class="status-dot"></span> AI Engineer · Computer Vision · Generative AI</p>
+                    <h1>I build multimodal AI systems that move from <span>research</span> to production.</h1>
+                    <p class="hero-summary">
+                        I design LLM/VLM pipelines, computer vision products, agentic RAG workflows,
+                        and generative imaging systems—engineered for accuracy, resilience, and measurable speed.
                     </p>
-                    <p>
-                        With expertise in <strong>Computer Vision</strong>, <strong>Deep Learning</strong>, and
-                        <strong>Neural Networks</strong>, I develop cutting-edge AI solutions that drive operational
-                        efficiency and innovation. My experience spans from building sophisticated object detection
-                        systems to implementing real-time tracking algorithms for industrial applications.
-                    </p>
-                    <p>
-                        Known for being a quick learner and highly enthusiastic about the field of Machine Learning,
-                        I continuously expand my knowledge through certifications and hands-on projects. My goal is
-                        to obtain industry-leading certifications like AWS Certified Machine Learning - Specialty,
-                        Microsoft Certified: Azure AI Engineer Associate, and Google Professional Machine Learning Engineer.
-                    </p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <h3>3.76</h3>
-                            <p>CGPA (94%)</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>3+</h3>
-                            <p>Years Experience</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>10+</h3>
-                            <p>AI Projects</p>
-                        </div>
-                        <div class="stat-item">
-                            <h3>4</h3>
-                            <p>Certifications</p>
-                        </div>
+                    <div class="hero-actions">
+                        <a class="button button-primary" href="#work">
+                            Explore selected work
+                            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+                        </a>
+                        <a class="button button-secondary" href="Resume.pdf" target="_blank" rel="noopener">
+                            View résumé
+                            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v10M6 9l4 4 4-4M4 17h12"/></svg>
+                        </a>
                     </div>
+                    <dl class="hero-metrics" aria-label="Career highlights">
+                        <div>
+                            <dt>3+</dt>
+                            <dd>Years building AI systems</dd>
+                        </div>
+                        <div>
+                            <dt>30–50%</dt>
+                            <dd>Pipeline runtime reduction</dd>
+                        </div>
+                        <div>
+                            <dt>LLM + VLM + CV</dt>
+                            <dd>Multimodal production scope</dd>
+                        </div>
+                    </dl>
                 </div>
-                <div class="about-education">
-                    <h3>Education</h3>
-                    <div class="education-item">
-                        <div class="education-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="education-details">
-                            <h4>BS Computer Science</h4>
-                            <p class="institution">Qarshi University</p>
-                            <p class="grade">CGPA: 3.76/4.0 (94%)</p>
-                        </div>
-                    </div>
-                    <div class="education-item">
-                        <div class="education-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <div class="education-details">
-                            <h4>FSc Pre Engineering</h4>
-                            <p class="institution">PakTurk Int'l College</p>
+
+                <div class="hero-visual reveal" data-delay="120">
+                    <div class="portrait-shell">
+                        <div class="portrait-grid" aria-hidden="true"></div>
+                        <picture>
+                            <source srcset="assets/images/faizan.webp" type="image/webp">
+                            <img src="assets/images/img.png" alt="Muhammad Faizan Khan, AI Engineer" width="928" height="1120" fetchpriority="high">
+                        </picture>
+                        <div class="portrait-label">
+                            <span>Currently</span>
+                            <strong>AI Engineer at NexaQuanta</strong>
                         </div>
                     </div>
-                    <div class="education-item">
-                        <div class="education-icon">
-                            <i class="fas fa-school"></i>
+
+                    <div class="pipeline-card" aria-label="Multimodal AI pipeline overview">
+                        <div class="pipeline-head">
+                            <span>production_pipeline.py</span>
+                            <span class="live-badge">live</span>
                         </div>
-                        <div class="education-details">
-                            <h4>Matriculation in Science</h4>
-                            <p class="institution">Javed Public High School</p>
+                        <div class="pipeline-flow">
+                            <span>Video</span>
+                            <svg viewBox="0 0 32 10" aria-hidden="true"><path d="M1 5h27M24 1l4 4-4 4"/></svg>
+                            <span>VLM</span>
+                            <svg viewBox="0 0 32 10" aria-hidden="true"><path d="M1 5h27M24 1l4 4-4 4"/></svg>
+                            <span>LLM</span>
+                            <svg viewBox="0 0 32 10" aria-hidden="true"><path d="M1 5h27M24 1l4 4-4 4"/></svg>
+                            <span>Insight</span>
+                        </div>
+                        <div class="pipeline-log">
+                            <span><i></i> schema validated</span>
+                            <span><i></i> confidence weighted</span>
+                            <span><i></i> output delivered</span>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section-experience">
-        <div class="container">
-            <h2 class="section-title">Work Experience</h2>
-            <div class="timeline">
-                <!-- Current Position -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">Present</div>
-                        <h3>AI Engineer</h3>
-                        <h4>NexaQuanta</h4>
-                        <p>
-                            Building smart AI and computer vision solutions for real-world problems. Fine-tuning
-                            deep learning models to detect, track, and recognize objects in images and videos.
-                            Transforming models into complete systems for real-time automation and quality checking.
-                        </p>
-                        <ul class="achievements">
-                            <li>Developed end-to-end computer vision pipelines for industrial automation</li>
-                            <li>Implemented real-time object detection and tracking systems</li>
-                            <li>Optimized deep learning models for production deployment</li>
-                            <li>Collaborated with cross-functional teams to deliver accurate, fast solutions</li>
-                        </ul>
+            <div class="capability-rail" aria-label="Core technologies">
+                <div class="rail-track">
+                    <span>Python</span><i></i><span>OpenAI</span><i></i><span>Gemini</span><i></i>
+                    <span>PyTorch</span><i></i><span>YOLO</span><i></i><span>Azure AI</span><i></i>
+                    <span>LangChain</span><i></i><span>Stable Diffusion</span><i></i><span>Docker</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="expertise section" id="expertise">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="section-index">01 / Expertise</p>
+                        <h2>AI across language, vision, and generation.</h2>
                     </div>
+                    <p>I work across the full system—from model and prompt behavior to async orchestration, evaluation, and production delivery.</p>
                 </div>
 
-                <!-- Meta Smart Factory -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2025</div>
-                        <h3>Senior Computer Vision and AI Specialist</h3>
-                        <h4>Meta Smart Factory - Remote</h4>
-                        <p>
-                            Spearheaded the development of cutting-edge computer vision and machine learning
-                            solutions to optimize industrial processes. Collaborated with cross-functional teams
-                            to implement AI-driven strategies that enhance operational efficiency and predictive
-                            maintenance.
-                        </p>
-                        <ul class="achievements">
-                            <li>Led computer vision initiatives for smart factory automation</li>
-                            <li>Developed AI-driven predictive maintenance systems</li>
-                            <li>Enhanced operational efficiency through machine learning optimization</li>
-                            <li>Managed remote collaboration with international teams</li>
+                <div class="expertise-grid">
+                    <article class="expertise-card reveal">
+                        <div class="card-number">01</div>
+                        <div class="expertise-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48"><rect x="7" y="9" width="34" height="30" rx="7"/><path d="M15 20h18M15 27h12M19 9V5M29 9V5M19 39v4M29 39v4"/></svg>
+                        </div>
+                        <h3>Multimodal intelligence</h3>
+                        <p>LLM and VLM systems that combine transcripts, video understanding, object detection, and structured reasoning.</p>
+                        <ul class="inline-tags" aria-label="Multimodal technologies">
+                            <li>OpenAI</li><li>Gemini</li><li>Mistral</li><li>YOLO</li>
                         </ul>
+                    </article>
+
+                    <article class="expertise-card featured reveal" data-delay="80">
+                        <div class="card-number">02</div>
+                        <div class="expertise-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48"><circle cx="13" cy="14" r="5"/><circle cx="35" cy="14" r="5"/><circle cx="24" cy="35" r="5"/><path d="M18 14h12M16 18l5 12M32 18l-5 12"/></svg>
+                        </div>
+                        <h3>Agentic knowledge systems</h3>
+                        <p>Specialized agents, Azure RAG, document intelligence, vector search, and context-grounded decision workflows.</p>
+                        <ul class="inline-tags" aria-label="Agentic AI technologies">
+                            <li>Azure AI</li><li>RAG</li><li>LangChain</li><li>Vector DBs</li>
+                        </ul>
+                    </article>
+
+                    <article class="expertise-card reveal" data-delay="160">
+                        <div class="card-number">03</div>
+                        <div class="expertise-icon" aria-hidden="true">
+                            <svg viewBox="0 0 48 48"><path d="M8 35l9-11 7 7 6-8 10 12"/><rect x="6" y="8" width="36" height="32" rx="7"/><circle cx="18" cy="18" r="4"/></svg>
+                        </div>
+                        <h3>Generative imaging</h3>
+                        <p>High-fidelity image pipelines using SDXL, ControlNet, LoRA, segmentation, and compositing workflows.</p>
+                        <ul class="inline-tags" aria-label="Generative imaging technologies">
+                            <li>SDXL</li><li>ControlNet</li><li>LoRA</li><li>ComfyUI</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="experience section" id="experience">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="section-index">02 / Experience</p>
+                        <h2>Production-minded from data to delivery.</h2>
                     </div>
+                    <p>Experience spanning applied machine learning, enterprise AI, computer vision, and resilient cloud-connected pipelines.</p>
                 </div>
 
-                <!-- Edraak Systems -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2024</div>
-                        <h3>AI & Machine Learning Engineer</h3>
-                        <h4>Edraak Systems</h4>
-                        <p>
-                            Focused on developing advanced machine learning models to improve operational efficiency.
-                            Worked extensively with computer vision and natural language processing (NLP), including
-                            data preprocessing, algorithm optimization, and model performance evaluation.
-                        </p>
-                        <ul class="achievements">
-                            <li>Built and optimized ML models for computer vision applications</li>
-                            <li>Implemented NLP solutions for text analysis and processing</li>
-                            <li>Performed extensive data preprocessing and feature engineering</li>
-                            <li>Evaluated and improved model performance through rigorous testing</li>
-                        </ul>
-                    </div>
-                </div>
+                <div class="experience-layout">
+                    <div class="experience-feature reveal">
+                        <div class="role-topline">
+                            <div>
+                                <p class="role-company">NexaQuanta</p>
+                                <h3>AI Engineer</h3>
+                            </div>
+                            <time datetime="2025-06">Jun 2025 — Present</time>
+                        </div>
+                        <p class="role-summary">Building complete AI pipelines across multiple client engagements, from preprocessing and model orchestration through deployment and evaluation.</p>
 
-                <!-- HiTech Provider -->
-                <div class="timeline-item">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-date">2023-2024</div>
-                        <h3>Machine Learning Engineer</h3>
-                        <h4>HiTech Provider</h4>
-                        <p>
-                            Developed and deployed cutting-edge machine learning models that drove significant
-                            improvements in operational efficiency and customer experience. Conducted extensive
-                            data preprocessing, built sophisticated algorithms, and evaluated model performance
-                            through advanced techniques.
-                        </p>
-                        <ul class="achievements">
-                            <li>Deployed ML models that improved operational efficiency</li>
-                            <li>Enhanced customer experience through intelligent automation</li>
-                            <li>Built and optimized sophisticated algorithms for complex problems</li>
-                            <li>Developed expertise in end-to-end ML pipeline development</li>
-                        </ul>
+                        <div class="engagement-list">
+                            <article>
+                                <span>Altia</span>
+                                <div>
+                                    <h4>Document AI, Agentic Systems & Azure RAG</h4>
+                                    <p>Mistral OCR and Azure Document Intelligence extraction, specialized multi-agent workflows, and vector-grounded enterprise retrieval.</p>
+                                </div>
+                            </article>
+                            <article>
+                                <span>CitNow</span>
+                                <div>
+                                    <h4>Vehicle Inspection Highlight Generator</h4>
+                                    <p>Async multi-provider LLM/VLM orchestration with schema repair, cost tracking, confidence weighting, and 30–50% faster runtime.</p>
+                                </div>
+                            </article>
+                            <article>
+                                <span>CitNow</span>
+                                <div>
+                                    <h4>Video Quality Scoring</h4>
+                                    <p>Speech, visual, and object-detection scoring over AWS SQS/S3 with caching, retries, webhooks, and automated accuracy tests.</p>
+                                </div>
+                            </article>
+                            <article>
+                                <span>CitNow</span>
+                                <div>
+                                    <h4>Generative Imaging Product</h4>
+                                    <p>SDXL, ControlNet, BiRefNet, IP-Adapter, and LoRA workflows for realistic automotive backgrounds, shadows, reflections, and branding.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="career-timeline">
+                        <article class="timeline-role reveal">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <time datetime="2024-02">Feb 2024 — May 2025</time>
+                            <h3>AI & Machine Learning Engineer</h3>
+                            <p class="timeline-company">Edraak Systems</p>
+                            <p>Developed and evaluated ML models across computer vision and NLP, with feature engineering, preprocessing, optimization, and robust validation.</p>
+                        </article>
+                        <article class="timeline-role reveal" data-delay="80">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <time datetime="2023-01">Jan 2023 — Feb 2024</time>
+                            <h3>Machine Learning Engineer</h3>
+                            <p class="timeline-company">HiTech Provider</p>
+                            <p>Built workflow-automation models by preparing datasets, experimenting with modern architectures, tuning hyperparameters, and evaluating performance.</p>
+                        </article>
+                        <article class="timeline-role reveal" data-delay="160">
+                            <div class="timeline-dot" aria-hidden="true"></div>
+                            <time>2022 — 2024</time>
+                            <h3>Machine Learning Engineer · Freelance</h3>
+                            <p class="timeline-company">Chegg</p>
+                            <p>Delivered RAG, medical classification, and NLP text-classification solutions using LangChain, Pinecone, scikit-learn, and NLTK.</p>
+                        </article>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section-skills">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <!-- AI & ML Frameworks -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-brain"></i>
+        <section class="work section" id="work">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="section-index">03 / Selected Work</p>
+                        <h2>Systems designed around real outcomes.</h2>
                     </div>
-                    <h3>AI & ML Frameworks</h3>
-                    <div class="skill-tags">
-                        <span class="tag">TensorFlow</span>
-                        <span class="tag">Keras</span>
-                        <span class="tag">PyTorch</span>
-                        <span class="tag">scikit-learn</span>
-                        <span class="tag">OpenCV</span>
-                    </div>
+                    <p>A selection of production engagements and public projects across multimodal AI, vision, NLP, and applied machine learning.</p>
                 </div>
 
-                <!-- Deep Learning -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3>Deep Learning</h3>
-                    <div class="skill-tags">
-                        <span class="tag">CNNs</span>
-                        <span class="tag">RNNs</span>
-                        <span class="tag">Transformers</span>
-                        <span class="tag">Neural Networks</span>
-                        <span class="tag">Transfer Learning</span>
-                    </div>
+                <div class="case-grid">
+                    <article class="case-card case-card-large reveal">
+                        <div class="case-top">
+                            <p>01 · Multimodal video intelligence</p>
+                            <span>Production system</span>
+                        </div>
+                        <h3>From inspection video to decision-ready highlights.</h3>
+                        <p class="case-description">A dynamic-routing pipeline that fuses transcript analysis, video understanding, and object detection into confidence-weighted timestamps and condition insights.</p>
+                        <div class="architecture" aria-label="System architecture: input, parallel intelligence, validation, delivery">
+                            <div><small>Input</small><strong>Video + Audio</strong></div>
+                            <span aria-hidden="true">→</span>
+                            <div><small>Parallel AI</small><strong>LLM · VLM · YOLO</strong></div>
+                            <span aria-hidden="true">→</span>
+                            <div><small>Reliability</small><strong>Schema + Retry</strong></div>
+                            <span aria-hidden="true">→</span>
+                            <div><small>Output</small><strong>Highlights</strong></div>
+                        </div>
+                        <dl class="case-results">
+                            <div><dt>30–50%</dt><dd>runtime reduction</dd></div>
+                            <div><dt>Multi-provider</dt><dd>dynamic model routing</dd></div>
+                            <div><dt>Resilient</dt><dd>repair, retry & cost controls</dd></div>
+                        </dl>
+                    </article>
+
+                    <article class="case-card reveal" data-delay="100">
+                        <div class="case-top">
+                            <p>02 · Enterprise knowledge AI</p>
+                            <span>Azure</span>
+                        </div>
+                        <h3>Documents transformed into grounded decisions.</h3>
+                        <p class="case-description">An enterprise workflow combining OCR, document intelligence, vector retrieval, and specialized agents for accurate, context-aware responses at scale.</p>
+                        <ul class="case-stack">
+                            <li>Mistral OCR</li><li>Azure AI</li><li>RAG</li><li>Agentic AI</li>
+                        </ul>
+                    </article>
+
+                    <article class="case-card reveal" data-delay="180">
+                        <div class="case-top">
+                            <p>03 · Generative automotive imaging</p>
+                            <span>Computer vision</span>
+                        </div>
+                        <h3>Photorealistic composition with structural control.</h3>
+                        <p class="case-description">A modular image-generation workflow for backgrounds, natural shadows, reflections, tinted windows, and adaptive brand placement.</p>
+                        <ul class="case-stack">
+                            <li>SDXL</li><li>ControlNet</li><li>BiRefNet</li><li>IP-Adapter</li>
+                        </ul>
+                    </article>
                 </div>
 
-                <!-- Computer Vision -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <h3>Computer Vision</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Object Detection</span>
-                        <span class="tag">YOLOv5/v7/v8</span>
-                        <span class="tag">Faster R-CNN</span>
-                        <span class="tag">Mask R-CNN</span>
-                        <span class="tag">Image Classification</span>
-                    </div>
-                </div>
-
-                <!-- Object Tracking -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <h3>Object Tracking</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Deep SORT</span>
-                        <span class="tag">ByteTrack</span>
-                        <span class="tag">Optical Flow</span>
-                        <span class="tag">Re-identification</span>
-                    </div>
-                </div>
-
-                <!-- Programming -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Programming Languages</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">C++</span>
-                        <span class="tag">Swift</span>
-                        <span class="tag">SQL</span>
-                        <span class="tag">HTML/CSS</span>
-                    </div>
-                </div>
-
-                <!-- Data Processing -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Data & Tools</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Data Preprocessing</span>
-                        <span class="tag">Apache Kafka</span>
-                        <span class="tag">MySQL</span>
-                        <span class="tag">LabelImg</span>
-                        <span class="tag">Roboflow</span>
-                    </div>
-                </div>
-
-                <!-- ML Techniques -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>ML Techniques</h3>
-                    <div class="skill-tags">
-                        <span class="tag">Model Optimization</span>
-                        <span class="tag">Hyperparameter Tuning</span>
-                        <span class="tag">Cross-Validation</span>
-                        <span class="tag">Ensemble Methods</span>
-                        <span class="tag">Feature Engineering</span>
-                    </div>
-                </div>
-
-                <!-- Specialized -->
-                <div class="skill-category">
-                    <div class="category-icon">
-                        <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>Specialized Skills</h3>
-                    <div class="skill-tags">
-                        <span class="tag">OCR (PaddleOCR)</span>
-                        <span class="tag">Pose Estimation</span>
-                        <span class="tag">Image Augmentation</span>
-                        <span class="tag">Model Deployment</span>
-                        <span class="tag">ONNX</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section-projects">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-car"></i>
-                    </div>
-                    <h3>Car Pose Detection & 360° Turntable Extraction</h3>
-                    <p class="project-description">
-                        iOS application using Core ML and Vision frameworks for automotive photography
-                        and virtual showrooms. Features memory-optimized video frame extraction and
-                        computer vision processing.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-mobile-alt"></i>
-                            <span>iOS Native App</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-memory"></i>
-                            <span>Optimized Memory</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-sync-alt"></i>
-                            <span>360° Processing</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">iOS</span>
-                        <span class="tech-tag">Core ML</span>
-                        <span class="tech-tag">Vision</span>
-                        <span class="tech-tag">Computer Vision</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-id-card"></i>
-                    </div>
-                    <h3>Real-Time License Plate Detection & Tracking</h3>
-                    <p class="project-description">
-                        Advanced OCR system with multilingual character recognition (English to Arabic)
-                        using PaddleOCR and HyperLPR3. Implements DeepSORT for robust object tracking.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-bullseye"></i>
-                            <span>97% Accuracy</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>30 FPS Real-time</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-language"></i>
-                            <span>Multi-lingual OCR</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">PaddleOCR</span>
-                        <span class="tech-tag">DeepSORT</span>
-                        <span class="tech-tag">ONNX</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Real-Time Object Tracking & People Counting</h3>
-                    <p class="project-description">
-                        YOLOv3-based system for real-time object detection with centroid tracking and
-                        people counting. Includes object re-identification capabilities.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-users"></i>
-                            <span>Multi-Person Tracking</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-tachometer-alt"></i>
-                            <span>Real-time Processing</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-fingerprint"></i>
-                            <span>Re-identification</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">YOLOv3</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Google Colab</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 4 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-pills"></i>
-                    </div>
-                    <h3>Medical Blister Quality Control System</h3>
-                    <p class="project-description">
-                        Custom YOLO-based automated quality assurance system for pharmaceutical
-                        defect detection. Uses Roboflow for dataset annotation and management.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-check-circle"></i>
-                            <span>98% Defect Detection</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-bolt"></i>
-                            <span>3x Faster Inspection</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-database"></i>
-                            <span>5000+ Samples Trained</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">YOLO</span>
-                        <span class="tech-tag">Roboflow</span>
-                        <span class="tech-tag">Deep Learning</span>
-                        <span class="tech-tag">Quality Control</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 5 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-hard-hat"></i>
-                    </div>
-                    <h3>Worker Safety Compliance Monitoring</h3>
-                    <p class="project-description">
-                        Scalable industrial surveillance system for workplace safety automation.
-                        Real-time PPE compliance monitoring with Apache Kafka stream processing.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-chart-line"></i>
-                            <span>95% Detection Rate</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-clock"></i>
-                            <span>25 FPS Processing</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-server"></i>
-                            <span>Multi-camera Support</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">YOLO</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">Apache Kafka</span>
-                        <span class="tech-tag">Real-time Analytics</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 6 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-warehouse"></i>
-                    </div>
-                    <h3>Pallet Color Detection & Counting System</h3>
-                    <p class="project-description">
-                        Warehouse automation solution with real-time object tracking and color-based
-                        classification. Integrated with Apache Kafka for smart logistics analytics.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-palette"></i>
-                            <span>Color Classification</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-stream"></i>
-                            <span>Kafka Integration</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-box"></i>
-                            <span>Automated Counting</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">YOLO</span>
-                        <span class="tech-tag">Apache Kafka</span>
-                        <span class="tech-tag">Inventory Management</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 7 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-dollar-sign"></i>
-                    </div>
-                    <h3>Car Price Prediction Model</h3>
-                    <p class="project-description">
-                        Machine learning model using Gradient Boosting, SVR, and ensemble methods.
-                        Features Bayesian optimization and comprehensive feature importance analysis.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-chart-line"></i>
-                            <span>92% R² Score</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-layer-group"></i>
-                            <span>Ensemble Methods</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-cogs"></i>
-                            <span>Bayesian Optimization</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Scikit-learn</span>
-                        <span class="tech-tag">XGBoost</span>
-                        <span class="tech-tag">SHAP</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 8 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-running"></i>
-                    </div>
-                    <h3>Pose Estimation for Human Body Analysis</h3>
-                    <p class="project-description">
-                        OpenPose-based system for pose estimation and keypoint detection. Human skeleton
-                        tracking for sports analytics, healthcare monitoring, and HCI applications.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-skating"></i>
-                            <span>18 Keypoint Detection</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-video"></i>
-                            <span>Real-time Tracking</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-heartbeat"></i>
-                            <span>Sports & Healthcare</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">OpenPose</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Google Colab</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/Pose-Estimation-for-Human-Body-Analysis" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 9 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-car-side"></i>
-                    </div>
-                    <h3>Saudi Number Plate Detection</h3>
-                    <p class="project-description">
-                        Advanced real-time vehicle license plate detection and recognition system using
-                        multiple AI-powered technologies for Saudi Arabian license plates.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-bullseye"></i>
-                            <span>96% Accuracy</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-globe-asia"></i>
-                            <span>Region-Specific</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-bolt"></i>
-                            <span>Real-time Detection</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">YOLO</span>
-                        <span class="tech-tag">OCR</span>
-                        <span class="tech-tag">Computer Vision</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/Saudi-Number-plate-detection" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 10 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-images"></i>
-                    </div>
-                    <h3>Image Similarity Analysis</h3>
-                    <p class="project-description">
-                        VGG16 deep learning model for image classification and similarity comparison.
-                        Analyzes and classifies animal images using transfer learning techniques.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-brain"></i>
-                            <span>VGG16 Architecture</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-exchange-alt"></i>
-                            <span>Transfer Learning</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-search"></i>
-                            <span>Similarity Matching</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">VGG16</span>
-                        <span class="tech-tag">TensorFlow</span>
-                        <span class="tech-tag">Transfer Learning</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/Image-similarity" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 11 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-smile"></i>
-                    </div>
-                    <h3>Face Emotion Detection</h3>
-                    <p class="project-description">
-                        Real-time facial emotion recognition system using deep learning. Detects and
-                        classifies human emotions from facial expressions in images and video streams.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-smile"></i>
-                            <span>7 Emotion Classes</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-chart-line"></i>
-                            <span>89% Accuracy</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-video"></i>
-                            <span>Live Video Support</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Deep Learning</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">CNN</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/Face-Emotion-Detection" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 12 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Library Assistant Chatbot</h3>
-                    <p class="project-description">
-                        AI-powered chatbot using Groq generative AI API for intelligent book recommendations
-                        and library assistance. Natural language processing for user queries.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-robot"></i>
-                            <span>Groq AI Powered</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-comments"></i>
-                            <span>NLP Processing</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-book-reader"></i>
-                            <span>Smart Recommendations</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Groq AI</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Chatbot</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/Library-Assistant-Chatbot" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 13 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-microphone"></i>
-                    </div>
-                    <h3>AI Virtual Assistant</h3>
-                    <p class="project-description">
-                        Intelligent virtual assistant leveraging Google's Generative AI Model API.
-                        Voice-activated assistant with natural language understanding capabilities.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-microphone-alt"></i>
-                            <span>Voice Activated</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fab fa-google"></i>
-                            <span>Google GenAI</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-brain"></i>
-                            <span>NLU Capabilities</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">Google GenAI</span>
-                        <span class="tech-tag">NLP</span>
-                        <span class="tech-tag">Voice Recognition</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/AI-Assistant" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 14 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-user-secret"></i>
-                    </div>
-                    <h3>Invisible Cloak Using OpenCV</h3>
-                    <p class="project-description">
-                        Computer vision project creating an "invisible cloak" effect using OpenCV.
-                        Real-time color segmentation and background replacement for visual effects.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-palette"></i>
-                            <span>Color Segmentation</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-magic"></i>
-                            <span>Visual Effects</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-clock"></i>
-                            <span>Real-time Processing</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">Color Segmentation</span>
-                        <span class="tech-tag">Real-time Processing</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/Invisible-Cloak-Using-OpenCV" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Project 15 -->
-                <div class="project-card">
-                    <div class="project-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Video Comparison Tool</h3>
-                    <p class="project-description">
-                        Frame-by-frame video comparison tool with advanced pixel analysis algorithm.
-                        Detects differences between videos for quality assurance and analysis.
-                    </p>
-                    <div class="project-metrics">
-                        <div class="metric">
-                            <i class="fas fa-film"></i>
-                            <span>Frame-by-Frame</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-microscope"></i>
-                            <span>Pixel Analysis</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-check-double"></i>
-                            <span>Quality Assurance</span>
-                        </div>
-                    </div>
-                    <div class="project-tech">
-                        <span class="tech-tag">Python</span>
-                        <span class="tech-tag">OpenCV</span>
-                        <span class="tech-tag">Frame Analysis</span>
-                        <span class="tech-tag">Computer Vision</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/faizankhan789/Video-comparison-tool" target="_blank" class="project-link">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Certifications Section -->
-    <section id="certifications" class="section-certifications">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certifications-grid">
-                <!-- Cert 1 -->
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>Neural Networks and Deep Learning</h3>
-                        <p class="cert-issuer">DeepLearning.AI (Coursera)</p>
-                    </div>
-                    <p class="cert-description">
-                        Expertise in designing, training, and optimizing neural networks using Python
-                        and deep learning techniques. Skills in backpropagation and building AI models
-                        for complex tasks.
-                    </p>
-                    <a href="https://coursera.org/verify/7XOQSDSHE9I1" target="_blank" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i> Verify Certificate
+                <div class="projects-header reveal">
+                    <div>
+                        <p class="section-index">Open source / Applied projects</p>
+                        <h3>More from the lab.</h3>
+                    </div>
+                    <a class="text-link" href="https://github.com/faizankhan789" target="_blank" rel="noopener noreferrer">
+                        View GitHub profile
+                        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
                     </a>
                 </div>
 
-                <!-- Cert 2 -->
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>Introduction to Neural Networks</h3>
-                        <p class="cert-issuer">Great Learning</p>
-                    </div>
-                    <p class="cert-description">
-                        Foundational knowledge in neural network design and key concepts like
-                        backpropagation and activation functions. Skills in applying neural networks
-                        to basic AI tasks.
-                    </p>
-                    <a href="https://www.mygreatlearning.com/certificate/XLUFYWCJ" target="_blank" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i> Verify Certificate
-                    </a>
-                </div>
-
-                <!-- Cert 3 -->
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>Machine Learning Modeling</h3>
-                        <p class="cert-issuer">Great Learning</p>
-                    </div>
-                    <p class="cert-description">
-                        Hands-on experience in designing, training, and evaluating machine learning
-                        models. Algorithm selection, data preprocessing, and model performance assessment
-                        for real-world applications.
-                    </p>
-                    <a href="https://www.mygreatlearning.com/certificate/FZQRNWEO" target="_blank" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i> Verify Certificate
-                    </a>
-                </div>
-
-                <!-- Cert 4 -->
-                <div class="cert-card">
-                    <div class="cert-header">
-                        <div class="cert-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>Machine Learning Pipeline</h3>
-                        <p class="cert-issuer">Great Learning</p>
-                    </div>
-                    <p class="cert-description">
-                        Building end-to-end workflows for machine learning models. Expertise in data
-                        preprocessing, model training, evaluation, and deployment with emphasis on
-                        performance and scalability.
-                    </p>
-                    <a href="https://www.mygreatlearning.com/certificate/KIEWURZH" target="_blank" class="cert-link">
-                        <i class="fas fa-external-link-alt"></i> Verify Certificate
-                    </a>
-                </div>
-            </div>
-
-            <div class="future-goals">
-                <h3>Future Certification Goals</h3>
-                <div class="goals-list">
-                    <div class="goal-item">
-                        <i class="fab fa-aws"></i>
-                        <span>AWS Certified Machine Learning - Specialty</span>
-                    </div>
-                    <div class="goal-item">
-                        <i class="fab fa-microsoft"></i>
-                        <span>Microsoft Certified: Azure AI Engineer Associate</span>
-                    </div>
-                    <div class="goal-item">
-                        <i class="fab fa-google"></i>
-                        <span>Google Professional Machine Learning Engineer</span>
-                    </div>
+                <div class="project-grid">
+                    <article class="project-card reveal">
+                        <p class="project-type">Computer Vision · OCR</p>
+                        <h3>Saudi Number Plate Detection</h3>
+                        <p>Real-time YOLO and OpenCV detection with custom OCR for Saudi plates, designed for live traffic-monitoring video.</p>
+                        <ul><li>Python</li><li>YOLO</li><li>OpenCV</li><li>OCR</li></ul>
+                        <a href="https://github.com/faizankhan789/Saudi-Number-plate-detection" target="_blank" rel="noopener noreferrer" aria-label="View Saudi Number Plate Detection on GitHub">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                    <article class="project-card reveal" data-delay="60">
+                        <p class="project-type">Conversational AI</p>
+                        <h3>Jarvis 2025 Voice Assistant</h3>
+                        <p>A natural-language system assistant for application control, web search, file management, weather, news, and information APIs.</p>
+                        <ul><li>Python</li><li>Speech</li><li>NLP</li><li>APIs</li></ul>
+                        <a href="https://github.com/faizankhan789/Jarvis-2025" target="_blank" rel="noopener noreferrer" aria-label="View Jarvis 2025 on GitHub">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                    <article class="project-card reveal" data-delay="120">
+                        <p class="project-type">Deep Learning · Vision</p>
+                        <h3>Face Emotion Detection</h3>
+                        <p>A real-time seven-class facial emotion model trained across 35,000+ samples with webcam inference.</p>
+                        <ul><li>TensorFlow</li><li>Keras</li><li>CNN</li><li>OpenCV</li></ul>
+                        <a href="https://github.com/faizankhan789/Face-Emotion-Detection" target="_blank" rel="noopener noreferrer" aria-label="View Face Emotion Detection on GitHub">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                    <article class="project-card reveal">
+                        <p class="project-type">Similarity Search · Vision</p>
+                        <h3>Image Similarity & Classification</h3>
+                        <p>VGG16 transfer learning with cosine-similarity duplicate detection, exposed through a Flask REST interface.</p>
+                        <ul><li>VGG16</li><li>Flask</li><li>Keras</li><li>REST</li></ul>
+                        <a href="https://github.com/faizankhan789/Image-similarity" target="_blank" rel="noopener noreferrer" aria-label="View Image Similarity and Classification on GitHub">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                    <article class="project-card reveal" data-delay="60">
+                        <p class="project-type">Applied Machine Learning</p>
+                        <h3>WisePrice Prediction Platform</h3>
+                        <p>Car-price prediction across ensemble and regression models with Bayesian tuning and a full-stack Flask application.</p>
+                        <ul><li>XGBoost</li><li>scikit-learn</li><li>Flask</li><li>SHAP</li></ul>
+                        <a href="https://github.com/faizankhan789/ML-Code-For-Price-Prediction" target="_blank" rel="noopener noreferrer" aria-label="View WisePrice on GitHub">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
+                    <article class="project-card reveal" data-delay="120">
+                        <p class="project-type">Video Analytics</p>
+                        <h3>Video Comparison Tool</h3>
+                        <p>Multi-threaded frame and block-level video analysis for similarity scoring, difference detection, and quality assessment.</p>
+                        <ul><li>Python</li><li>OpenCV</li><li>NumPy</li><li>Concurrency</li></ul>
+                        <a href="https://github.com/faizankhan789/video-comparison-tool-" target="_blank" rel="noopener noreferrer" aria-label="View Video Comparison Tool on GitHub">
+                            View repository <span aria-hidden="true">↗</span>
+                        </a>
+                    </article>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-contact">
+        <section class="skills section" id="skills">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="section-index">04 / Technical Stack</p>
+                        <h2>A practical stack for production AI.</h2>
+                    </div>
+                    <p>Modeling is only one layer. I pair it with reliable APIs, data systems, evaluation, and cloud infrastructure.</p>
+                </div>
+
+                <div class="skills-matrix">
+                    <article class="skill-row reveal">
+                        <div><span>01</span><h3>Language & Agentic AI</h3></div>
+                        <ul>
+                            <li>LLMs</li><li>VLMs</li><li>RAG</li><li>Prompt Engineering</li><li>Agentic AI</li>
+                            <li>LangChain</li><li>Fine-tuning / LoRA</li><li>Vector Search</li>
+                        </ul>
+                    </article>
+                    <article class="skill-row reveal">
+                        <div><span>02</span><h3>Computer Vision</h3></div>
+                        <ul>
+                            <li>PyTorch</li><li>TensorFlow</li><li>OpenCV</li><li>YOLO v5/v7/v8</li>
+                            <li>Deep SORT</li><li>ByteTrack</li><li>OCR</li><li>Transformers</li>
+                        </ul>
+                    </article>
+                    <article class="skill-row reveal">
+                        <div><span>03</span><h3>Generative Media</h3></div>
+                        <ul>
+                            <li>Stable Diffusion</li><li>SDXL</li><li>ControlNet</li><li>ComfyUI</li>
+                            <li>IP-Adapter</li><li>BiRefNet</li><li>Kohya SS</li><li>FFmpeg</li>
+                        </ul>
+                    </article>
+                    <article class="skill-row reveal">
+                        <div><span>04</span><h3>Data & Infrastructure</h3></div>
+                        <ul>
+                            <li>Python</li><li>Docker</li><li>Redis</li><li>PostgreSQL</li><li>AWS S3 / SQS</li>
+                            <li>Azure AI</li><li>Kafka</li><li>FAISS</li><li>Pinecone</li><li>ChromaDB</li>
+                        </ul>
+                    </article>
+                    <article class="skill-row reveal">
+                        <div><span>05</span><h3>Engineering Practice</h3></div>
+                        <ul>
+                            <li>MLOps</li><li>REST APIs</li><li>CI/CD</li><li>Async Python</li>
+                            <li>Model Evaluation</li><li>Cross-validation</li><li>Cost Tracking</li><li>Git</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="credentials section" id="credentials">
+            <div class="container">
+                <div class="section-heading reveal">
+                    <div>
+                        <p class="section-index">05 / Credentials</p>
+                        <h2>Strong fundamentals, continuous learning.</h2>
+                    </div>
+                </div>
+
+                <div class="credentials-grid">
+                    <article class="education-card reveal">
+                        <p class="credential-label">Education</p>
+                        <div class="degree-mark" aria-hidden="true">BS</div>
+                        <h3>Bachelor of Science in Computer Science</h3>
+                        <p>Qarshi University</p>
+                        <div class="education-meta">
+                            <span>2023</span>
+                            <span>CGPA 3.76 / 94%</span>
+                        </div>
+                    </article>
+
+                    <div class="certifications reveal" data-delay="100">
+                        <p class="credential-label">Certifications</p>
+                        <a href="https://coursera.org/verify/7XOQSDSHE9I1" target="_blank" rel="noopener noreferrer">
+                            <span><strong>Neural Networks and Deep Learning</strong><small>DeepLearning.AI · Coursera</small></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://www.mygreatlearning.com/certificate/XLUFYWCJ" target="_blank" rel="noopener noreferrer">
+                            <span><strong>Introduction to Neural Networks</strong><small>Great Learning</small></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://www.mygreatlearning.com/certificate/FZQRNWEO" target="_blank" rel="noopener noreferrer">
+                            <span><strong>Machine Learning Modeling</strong><small>Great Learning</small></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://www.mygreatlearning.com/certificate/KIEWURZH" target="_blank" rel="noopener noreferrer">
+                            <span><strong>Machine Learning Pipeline</strong><small>Great Learning</small></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://www.udemy.com/certificate/UC-40b6e578-a059-40c0-9aeb-a27a13875f49/" target="_blank" rel="noopener noreferrer">
+                            <span><strong>OWASP Top 10 LLM 2025</strong><small>AI Security Essentials · Udemy</small></span>
+                            <i aria-hidden="true">↗</i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section" id="contact">
+            <div class="container">
+                <div class="contact-panel reveal">
+                    <div class="contact-copy">
+                        <p class="section-index">06 / Contact</p>
+                        <h2>Have a complex AI problem?</h2>
+                        <p>Let’s turn it into a system that is accurate, maintainable, and ready for real users.</p>
+                        <a class="button button-primary" href="mailto:faizankhan58396@gmail.com">
+                            faizankhan58396@gmail.com
+                            <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+                        </a>
+                    </div>
+                    <div class="contact-links">
+                        <a href="https://www.linkedin.com/in/muhamad-faizan-khan-13656b1a0/" target="_blank" rel="noopener noreferrer">
+                            <span>LinkedIn</span><small>Professional profile</small><i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="https://github.com/faizankhan789" target="_blank" rel="noopener noreferrer">
+                            <span>GitHub</span><small>Code and experiments</small><i aria-hidden="true">↗</i>
+                        </a>
+                        <a href="tel:+923174558424">
+                            <span>Phone</span><small>+92 317 4558424</small><i aria-hidden="true">→</i>
+                        </a>
+                        <div class="contact-location">
+                            <span>Location</span><small>Pakistan · PKT (UTC+5)</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
         <div class="container">
-            <h2 class="section-title">Let's Connect</h2>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <p class="contact-intro">
-                        I'm always interested in discussing new opportunities, collaborating on AI projects,
-                        or just connecting with fellow ML enthusiasts. Feel free to reach out!
-                    </p>
-                    <div class="contact-methods">
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Email</h4>
-                                <a href="mailto:faizankhan58396@gmail.com">faizankhan58396@gmail.com</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>Phone</h4>
-                                <a href="tel:+923174558424">+92 317 4558424</a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-linkedin"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>LinkedIn</h4>
-                                <a href="https://www.linkedin.com/in/muhamad-faizan-khan-13656b1a0/" target="_blank">
-                                    Connect with me
-                                </a>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class="fab fa-github"></i>
-                            </div>
-                            <div class="contact-details">
-                                <h4>GitHub</h4>
-                                <a href="https://github.com/faizankhan789" target="_blank">
-                                    View my repositories
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Muhammad Faizan Khan. All rights reserved.</p>
-                <p class="footer-tagline">Built with passion for AI and Machine Learning</p>
-            </div>
+            <p>© <span id="current-year">2026</span> Muhammad Faizan Khan</p>
+            <p>AI Engineering · Computer Vision · Generative AI</p>
+            <a href="#home">Back to top <span aria-hidden="true">↑</span></a>
         </div>
     </footer>
 
-    <script src="js/script.js"></script>
+    <button class="back-to-top" type="button" aria-label="Back to top">
+        <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16V4M5 9l5-5 5 5"/></svg>
+    </button>
 </body>
 </html>
