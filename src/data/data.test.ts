@@ -38,6 +38,11 @@ describe('content data', () => {
     expect(site.resume).toBe('Resume.pdf')
     expect(site.current).toContain('Currently at NexaQuanta')
   })
+  it('hero highlights and specialties', () => {
+    expect(site.highlights.length).toBe(3)
+    expect(site.highlights[1]).toEqual({ value: '30–50%', label: 'Pipeline runtime reduction' })
+    expect(site.specialties).toBe('AI Engineer · Computer Vision · Generative AI')
+  })
   it('roles, skills, credentials', () => {
     expect(roles.map((r) => r.company)).toEqual(['NexaQuanta', 'Edraak Systems', 'HiTech Provider', 'Chegg'])
     expect(skillGroups.length).toBe(5)

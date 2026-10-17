@@ -43,6 +43,8 @@ export interface Site {
   role: string
   tagline: string
   about: string
+  specialties: string
+  highlights: { value: string; label: string }[]
   current: string
   email: string
   phone: string
