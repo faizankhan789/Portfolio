@@ -4,7 +4,9 @@ Run: python3 -I scripts/make-portrait.py
 """
 from pathlib import Path
 from PIL import Image
+import numpy as np
 from rembg import remove
+from scipy import ndimage
 
 ROOT = Path(__file__).resolve().parent.parent
 SRC = ROOT / "source-assets" / "img.png"
@@ -14,6 +16,17 @@ HEIGHT = 600
 
 img = Image.open(SRC).convert("RGBA")
 cut = remove(img)
+
+# Clean the matte: drop faint alpha, keep only the largest connected opaque blob.
+arr = np.array(cut)
+alpha = arr[..., 3]
+alpha[alpha <= 64] = 0
+labels, n = ndimage.label(alpha > 0)
+if n > 1:
+    sizes = ndimage.sum(alpha > 0, labels, range(1, n + 1))
+    alpha[labels != (int(np.argmax(sizes)) + 1)] = 0
+arr[..., 3] = alpha
+cut = Image.fromarray(arr, "RGBA")
 crop = cut.crop(CROP)
 w = round(crop.width * HEIGHT / crop.height)
 crop = crop.resize((w, HEIGHT), Image.LANCZOS)

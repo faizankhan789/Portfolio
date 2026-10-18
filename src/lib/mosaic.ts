@@ -40,3 +40,11 @@ export function tileColor(lum: number, jitter: number): string {
   })
   return `rgb(${c[0]}, ${c[1]}, ${c[2]})`
 }
+
+/** Largest rect with the source aspect ratio that fits inside the box, centred (like object-fit: contain). */
+export function containRect(srcW: number, srcH: number, boxW: number, boxH: number): { x: number; y: number; w: number; h: number } {
+  const scale = Math.min(boxW / srcW, boxH / srcH)
+  const w = srcW * scale
+  const h = srcH * scale
+  return { x: (boxW - w) / 2, y: (boxH - h) / 2, w, h }
+}

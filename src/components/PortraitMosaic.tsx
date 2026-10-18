@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { prefersReducedMotion } from '../lib/motion'
-import { sampleTiles, tileColor, type Tile } from '../lib/mosaic'
+import { containRect, sampleTiles, tileColor, type Tile } from '../lib/mosaic'
 
 type Props = { src: string; className?: string }
 
@@ -80,7 +80,8 @@ export default function PortraitMosaic({ src, className }: Props) {
       off.height = h
       const octx = off.getContext('2d', { willReadFrequently: true })
       if (!octx) return
-      octx.drawImage(source, 0, 0, w, h)
+      const fit = containRect(source.naturalWidth, source.naturalHeight, w, h)
+      octx.drawImage(source, fit.x, fit.y, fit.w, fit.h)
       tilePx = Math.round(TILE_CSS_PX * dpr)
       tiles = sampleTiles(octx.getImageData(0, 0, w, h).data, w, h, tilePx)
       jitter = tiles.map(() => (Math.random() - 0.5) * 0.12)
@@ -134,11 +135,11 @@ export default function PortraitMosaic({ src, className }: Props) {
   }, [src])
 
   return (
-    <div ref={wrapRef} className={className} style={{ position: 'relative' }}>
+    <div ref={wrapRef} role="img" aria-label={ALT} className={className} style={{ position: 'relative' }}>
       <img
         ref={imgRef}
         src={src}
-        alt={ALT}
+        alt=""
         style={{
           display: 'block',
           width: '100%',

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { sampleTiles, tileColor } from './mosaic'
+import { containRect, sampleTiles, tileColor } from './mosaic'
 
 function image(w: number, h: number, px: (x: number, y: number) => [number, number, number, number]) {
   const d = new Uint8ClampedArray(w * h * 4)
@@ -29,5 +29,17 @@ describe('tileColor', () => {
   it('maps lum endpoints', () => {
     expect(tileColor(0, 0)).toBe('rgb(14, 18, 32)')
     expect(tileColor(1, 0)).toBe('rgb(201, 214, 242)')
+  })
+})
+
+describe('containRect', () => {
+  it('fills a same-aspect box', () => {
+    expect(containRect(100, 200, 50, 100)).toEqual({ x: 0, y: 0, w: 50, h: 100 })
+  })
+  it('letterboxes horizontally in a wide box', () => {
+    expect(containRect(100, 200, 200, 100)).toEqual({ x: 75, y: 0, w: 50, h: 100 })
+  })
+  it('letterboxes vertically in a tall box', () => {
+    expect(containRect(200, 100, 100, 200)).toEqual({ x: 0, y: 75, w: 100, h: 50 })
   })
 })
