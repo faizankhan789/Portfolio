@@ -8,7 +8,15 @@ interface Props {
 export default function Nav({ sections }: Props) {
   const [open, setOpen] = useState(false)
   const [active, setActive] = useState<string>(sections[0]?.id ?? '')
+  const [scrolled, setScrolled] = useState(false)
   const toggle = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   useEffect(() => {
     if (!open) return
@@ -48,11 +56,21 @@ export default function Nav({ sections }: Props) {
     }`
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-4 mix-blend-normal">
+    <header
+      data-scrolled={scrolled}
+      className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-5 py-4 mix-blend-normal"
+    >
+      {/* Separate layer: backdrop-filter on the header itself would trap the fixed mobile menu. */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-0 border-b backdrop-blur-md transition-[opacity,background-color,border-color] duration-200 motion-reduce:transition-none ${
+          scrolled ? 'border-line bg-bg/75 opacity-100' : 'border-transparent bg-transparent opacity-0'
+        }`}
+      />
       <a href="#home" className="relative z-[60] font-sans text-sm font-bold uppercase tracking-wider">
         {site.name}
       </a>
-      <nav aria-label="Primary" className="hidden gap-6 min-[900px]:flex">
+      <nav aria-label="Primary" className="relative z-[60] hidden gap-6 min-[900px]:flex">
         {sections.map((s) => (
           <a key={s.id} href={`#${s.id}`} className={linkClass(s.id)} aria-current={active === s.id ? 'true' : undefined}>
             {s.label}
