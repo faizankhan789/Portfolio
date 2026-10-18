@@ -1,11 +1,18 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import MetallicHeading from '../components/MetallicHeading'
 import { services } from '../data/services'
-import { useGsap } from '../lib/motion'
+import { refreshScrollTriggers, useGsap } from '../lib/motion'
 
 export default function Services() {
   const root = useRef<HTMLElement>(null)
   const [open, setOpen] = useState<number | null>(null)
+  // Prerender (and no-JS) shows every panel; the accordion only takes over after hydration.
+  const [mounted, setMounted] = useState(false)
+  useEffect(() => setMounted(true), [])
+  // Opening/closing changes page height: re-measure triggers for everything below.
+  useEffect(() => {
+    if (mounted) refreshScrollTriggers()
+  }, [mounted, open])
 
   useGsap(root, (g) => {
     g.utils.toArray<HTMLElement>('[data-row]').forEach((row) => {
@@ -24,7 +31,7 @@ export default function Services() {
       <MetallicHeading text="What I can do" lines={['What I', 'can do']} className="text-right" />
       <ul className="mt-16 border-t border-line">
         {services.map((s, i) => {
-          const isOpen = open === i
+          const isOpen = !mounted || open === i
           const num = String(i + 1).padStart(2, '0')
           return (
             <li key={s.title} data-row className="border-b border-line">

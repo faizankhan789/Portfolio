@@ -20,3 +20,10 @@ export function useGsap(scope: RefObject<HTMLElement | null>, setup: Setup): voi
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 }
+
+/** Recompute ScrollTrigger start/end positions after a layout change. No-op under reduced motion. */
+export function refreshScrollTriggers(): void {
+  if (prefersReducedMotion()) return
+  gsap.registerPlugin(ScrollTrigger)
+  ScrollTrigger.refresh()
+}

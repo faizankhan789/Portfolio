@@ -1,4 +1,5 @@
 import { expect, test } from '@playwright/test'
+import { services } from '../src/data/services'
 
 const HEADINGS = [/^intro$/i, /^what i can do$/i, /^selected work$/i, /^experience$/i, /^credentials$/i]
 
@@ -43,6 +44,7 @@ test.describe('javascript disabled', () => {
       await expect(page.getByRole('heading', { level: 2, name })).toBeAttached()
     }
     await expect(page.getByText('Muhammad Faizan Khan').first()).toBeAttached()
+    await expect(page.getByText(services[0].summary)).toBeVisible()
   })
 })
 
