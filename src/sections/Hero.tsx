@@ -51,7 +51,7 @@ export default function Hero({ ready = true }: Props) {
       <div
         className="pointer-events-none absolute left-1/2 top-[8vh] h-[70vh] -translate-x-1/2 aspect-[588/600]"
       >
-        <PortraitMosaic src={asset('images/portrait-cutout.png')} className="h-full w-full" />
+        <PortraitMosaic src={asset('images/portrait-cutout.webp')} className="h-full w-full" />
       </div>
 
       <h1

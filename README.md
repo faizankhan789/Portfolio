@@ -20,6 +20,16 @@ npm test         # unit tests
 npm run e2e      # Playwright tests (run `npx playwright install chromium` once)
 ```
 
+## Portrait asset
+
+`public/images/portrait-cutout.webp` (the hero mosaic source) is generated from
+`source-assets/img.png` with background removal that runs locally:
+
+```bash
+pip install rembg pillow numpy scipy   # numpy + scipy clean the matte
+python3 -I scripts/make-portrait.py
+```
+
 ## Deploy
 
 Deployment is automatic: push to `main` and the GitHub Actions workflow
