@@ -4,8 +4,9 @@ export default defineConfig({
   testDir: './e2e',
   use: { baseURL: 'http://localhost:4173' },
   webServer: {
-    command: 'npx vite preview --base /Portfolio/ --port 4173 --strictPort',
+    command: 'npm run build && npx vite preview --base /Portfolio/ --port 4173 --strictPort',
     url: 'http://localhost:4173/Portfolio/',
-    reuseExistingServer: !process.env.CI,
+    reuseExistingServer: false,
+    timeout: 120_000,
   },
 })
