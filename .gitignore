@@ -9,3 +9,4 @@ dist-ssr
 .idea
 test-results
 playwright-report
+output/
