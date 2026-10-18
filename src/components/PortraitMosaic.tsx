@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { prefersReducedMotion } from '../lib/motion'
-import { containRect, sampleTiles, tileColor, type Tile } from '../lib/mosaic'
+import { backingScale, containRect, sampleTiles, tileColor, type Tile } from '../lib/mosaic'
 
 type Props = { src: string; className?: string }
 
@@ -70,7 +70,7 @@ export default function PortraitMosaic({ src, className }: Props) {
       const cssW = wrap.clientWidth
       const cssH = wrap.clientHeight
       if (!cssW || !cssH || !source.naturalWidth) return
-      dpr = window.devicePixelRatio || 1
+      dpr = backingScale(cssW, cssH, window.devicePixelRatio)
       const w = Math.round(cssW * dpr)
       const h = Math.round(cssH * dpr)
       canvas.width = w
@@ -82,7 +82,7 @@ export default function PortraitMosaic({ src, className }: Props) {
       if (!octx) return
       const fit = containRect(source.naturalWidth, source.naturalHeight, w, h)
       octx.drawImage(source, fit.x, fit.y, fit.w, fit.h)
-      tilePx = Math.round(TILE_CSS_PX * dpr)
+      tilePx = Math.max(1, Math.round(TILE_CSS_PX * dpr))
       tiles = sampleTiles(octx.getImageData(0, 0, w, h).data, w, h, tilePx)
       jitter = tiles.map(() => (Math.random() - 0.5) * 0.12)
       draw()

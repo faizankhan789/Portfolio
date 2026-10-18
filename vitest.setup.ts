@@ -13,6 +13,10 @@ if (typeof window !== 'undefined') {
       dispatchEvent: () => false,
     })) as unknown as typeof window.matchMedia
   }
+  // jsdom has no canvas backend (and logs "Not implemented"); null is the no-canvas path components handle.
+  HTMLCanvasElement.prototype.getContext = (() => null) as typeof HTMLCanvasElement.prototype.getContext
+  // ScrollTrigger.refresh() restores scroll position; jsdom's scrollTo only logs "Not implemented".
+  window.scrollTo = (() => {}) as typeof window.scrollTo
   if (!('IntersectionObserver' in window)) {
     class IO {
       observe() {}
