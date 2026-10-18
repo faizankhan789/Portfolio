@@ -19,9 +19,10 @@ export default function Intro() {
 
   return (
     <section ref={root} id="about" className="px-4 py-24 sm:px-8 sm:py-36">
-      <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-muted">About me</p>
+      <p className="mb-6 font-mono text-xs uppercase tracking-[0.2em] text-muted">{site.specialties}</p>
       <MetallicHeading text="Intro" lines={['Intro']} />
       <div data-about className="mt-12 rounded-3xl border border-line bg-[#0f0f11] p-6 sm:p-12">
+        <p className="mb-8 font-serif text-2xl italic leading-snug text-accent sm:text-3xl">{site.tagline}</p>
         <p className="text-2xl font-medium leading-snug sm:text-4xl lg:text-5xl">
           {WORDS.map((w, i) => (
             <span key={i}>

@@ -24,4 +24,10 @@ describe('Intro', () => {
     expect(screen.getByText(/Currently at NexaQuanta/)).toBeInTheDocument()
     for (const h of site.highlights) expect(screen.getByText(h.value)).toBeInTheDocument()
   })
+
+  it('renders the specialties eyebrow and the tagline lead', () => {
+    render(<Intro />)
+    expect(screen.getByText(site.specialties)).toBeInTheDocument()
+    expect(screen.getByText(site.tagline)).toBeInTheDocument()
+  })
 })
