@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import gsap from 'gsap'
+import { lockScroll } from '../lib/lenis'
 import { prefersReducedMotion } from '../lib/motion'
 
 function alreadyPreloaded(): boolean {
@@ -27,8 +28,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
 
   useEffect(() => {
     if (!active) return
-    const prevOverflow = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    const unlock = lockScroll()
     const state = { v: 0 }
     let finished = false
     const finish = () => {
@@ -40,7 +40,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       } catch {
         /* ignore */
       }
-      document.body.style.overflow = prevOverflow
+      unlock()
       setActive(false)
       done.current()
     }
@@ -57,7 +57,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
     return () => {
       window.clearTimeout(failsafe)
       tl.kill()
-      document.body.style.overflow = prevOverflow
+      unlock()
     }
   }, [active])
 

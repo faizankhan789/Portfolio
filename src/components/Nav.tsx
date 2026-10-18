@@ -1,5 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import { site } from '../data/site'
+import { lockScroll } from '../lib/lenis'
+
+const DESKTOP = '(min-width: 900px)'
 
 interface Props {
   sections: { id: string; label: string }[]
@@ -27,11 +30,17 @@ export default function Nav({ sections }: Props) {
       }
     }
     document.addEventListener('keydown', onKey)
-    const prev = document.body.style.overflow
-    document.body.style.overflow = 'hidden'
+    // The menu only exists below 900px: growing past it must not leave the page locked.
+    const mq = typeof window.matchMedia === 'function' ? window.matchMedia(DESKTOP) : null
+    const onWide = (e: { matches: boolean }) => {
+      if (e.matches) setOpen(false)
+    }
+    mq?.addEventListener?.('change', onWide)
+    const unlock = lockScroll()
     return () => {
       document.removeEventListener('keydown', onKey)
-      document.body.style.overflow = prev
+      mq?.removeEventListener?.('change', onWide)
+      unlock()
     }
   }, [open])
 
@@ -39,13 +48,17 @@ export default function Nav({ sections }: Props) {
     if (typeof IntersectionObserver === 'undefined') return
     const io = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) if (e.isIntersecting) setActive(e.target.id)
+        for (const e of entries) {
+          if (e.isIntersecting) setActive((e.target as HTMLElement).dataset.nav ?? e.target.id)
+        }
       },
       { rootMargin: '-45% 0px -50% 0px' },
     )
     for (const s of sections) {
       const el = document.getElementById(s.id)
       if (el) io.observe(el)
+      // Unlinked sections (e.g. the stack marquee) declare which nav entry they belong to.
+      document.querySelectorAll(`[data-nav="${s.id}"]`).forEach((n) => io.observe(n))
     }
     return () => io.disconnect()
   }, [sections])

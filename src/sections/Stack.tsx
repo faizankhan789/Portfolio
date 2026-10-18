@@ -33,7 +33,7 @@ function Row({ items, reverse }: { items: string[]; reverse?: boolean }) {
 
 export default function Stack() {
   return (
-    <section aria-label="Tech stack" className="overflow-hidden py-16 sm:py-24">
+    <section aria-label="Tech stack" data-nav="about" className="overflow-hidden py-16 sm:py-24">
       <div className="flex flex-col gap-3">
         <Row items={ROW1} />
         <Row items={ROW2} reverse />
