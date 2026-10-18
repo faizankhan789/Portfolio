@@ -13,15 +13,15 @@ function letterStyle(line: number, total: number): CSSProperties {
   }
 }
 
-type Props = { text: string; lines: string[]; className?: string; lineClassName?: string; id?: string; accent?: string }
+type Props = { text: string; lines: string[]; className?: string; lineClassName?: string; id?: string; accent?: string; fontSize?: string }
 
 /** h2 whose accessible name is `text`; visual `lines` are metallic per-letter gradients. */
-export default function MetallicHeading({ text, lines, className = '', lineClassName = '', id, accent }: Props) {
+export default function MetallicHeading({ text, lines, className = '', lineClassName = '', id, accent, fontSize = 'clamp(3rem, 13vw, 12rem)' }: Props) {
   return (
     <h2
       id={id}
       className={`font-sans font-black uppercase leading-[0.85] tracking-[-0.03em] ${className}`}
-      style={{ fontSize: 'clamp(3rem, 13vw, 12rem)' }}
+      style={{ fontSize }}
     >
       <span className="sr-only">{text}</span>
       {lines.map((line, li) => (

@@ -3,6 +3,9 @@ import Footer from './components/Footer'
 import Nav from './components/Nav'
 import Preloader from './components/Preloader'
 import SmoothScroll from './components/SmoothScroll'
+import Contact from './sections/Contact'
+import Credentials from './sections/Credentials'
+import Experience from './sections/Experience'
 import Hero from './sections/Hero'
 import Intro from './sections/Intro'
 import Services from './sections/Services'
@@ -23,11 +26,9 @@ export default function App() {
         <Stack />
         <Services />
         <Work />
-        {sections
-          .filter((s) => !['home', 'about', 'services', 'work'].includes(s.id))
-          .map((s) => (
-            <section key={s.id} id={s.id} />
-          ))}
+        <Experience />
+        <Credentials />
+        <Contact />
       </main>
       <Footer />
     </>
