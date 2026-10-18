@@ -7,6 +7,7 @@ import Hero from './sections/Hero'
 import Intro from './sections/Intro'
 import Services from './sections/Services'
 import Stack from './sections/Stack'
+import Work from './sections/Work'
 import { sections } from './lib/sections'
 
 export default function App() {
@@ -21,8 +22,9 @@ export default function App() {
         <Intro />
         <Stack />
         <Services />
+        <Work />
         {sections
-          .filter((s) => !['home', 'about', 'services'].includes(s.id))
+          .filter((s) => !['home', 'about', 'services', 'work'].includes(s.id))
           .map((s) => (
             <section key={s.id} id={s.id} />
           ))}
