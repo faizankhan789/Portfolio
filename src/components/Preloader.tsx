@@ -30,7 +30,11 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
     const prevOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
     const state = { v: 0 }
+    let finished = false
     const finish = () => {
+      if (finished) return
+      finished = true
+      window.clearTimeout(failsafe)
       try {
         window.sessionStorage.setItem('preloaded', '1')
       } catch {
@@ -40,6 +44,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       setActive(false)
       done.current()
     }
+    const failsafe = window.setTimeout(finish, 3500)
     const tl = gsap.timeline({ onComplete: finish })
     tl.to(state, {
       v: 100,
@@ -50,6 +55,7 @@ export default function Preloader({ onDone }: { onDone: () => void }) {
       },
     }).to(root.current, { yPercent: -100, duration: 0.7, ease: 'power3.inOut' })
     return () => {
+      window.clearTimeout(failsafe)
       tl.kill()
       document.body.style.overflow = prevOverflow
     }
