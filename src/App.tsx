@@ -4,6 +4,9 @@ import Nav from './components/Nav'
 import Preloader from './components/Preloader'
 import SmoothScroll from './components/SmoothScroll'
 import Hero from './sections/Hero'
+import Intro from './sections/Intro'
+import Services from './sections/Services'
+import Stack from './sections/Stack'
 import { sections } from './lib/sections'
 
 export default function App() {
@@ -15,8 +18,11 @@ export default function App() {
       <Nav sections={sections} />
       <main>
         <Hero ready={ready} />
+        <Intro />
+        <Stack />
+        <Services />
         {sections
-          .filter((s) => s.id !== 'home')
+          .filter((s) => !['home', 'about', 'services'].includes(s.id))
           .map((s) => (
             <section key={s.id} id={s.id} />
           ))}

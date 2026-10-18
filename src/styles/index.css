@@ -30,3 +30,27 @@ body {
   background: var(--bg);
   color: var(--fg);
 }
+
+/* Tech stack marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+}
+.marquee-set {
+  display: flex;
+  flex-shrink: 0;
+  gap: 0.75rem;
+  padding-right: 0.75rem;
+  animation: marquee 40s linear infinite;
+}
+.marquee-reverse .marquee-set { animation-direction: reverse; }
+.marquee:hover .marquee-set { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { width: auto; flex-wrap: wrap; }
+  .marquee-set { animation: none; flex-wrap: wrap; padding-right: 0; }
+  .marquee-set[data-marquee-dup] { display: none; }
+}
