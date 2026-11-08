@@ -32,11 +32,6 @@ export default function Contact() {
         >
           {site.email}
         </a>
-        <p data-contact className="mt-6 font-mono text-sm tracking-widest text-muted">
-          <a href={`tel:${site.phone.replace(/\s/g, '')}`} className="hover:text-fg">
-            {site.phone}
-          </a>
-        </p>
         <div data-contact className="mt-10 flex flex-wrap gap-3">
           <a href={site.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub profile" className={pill}>
             GitHub ↗

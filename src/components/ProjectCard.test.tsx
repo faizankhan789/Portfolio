@@ -50,4 +50,10 @@ describe('ProjectCard', () => {
     render(<ProjectCard project={{ ...base, repo: 'https://github.com/a/b' }} index={0} />)
     expect(screen.getByRole('link', { name: /github/i })).toHaveAttribute('href', 'https://github.com/a/b')
   })
+
+  it('shows a private note instead of a GitHub link for private repos', () => {
+    render(<ProjectCard project={{ ...base, repo: undefined, private: true }} index={0} />)
+    expect(screen.queryByRole('link', { name: /github/i })).toBeNull()
+    expect(screen.getByText(/private repository/i)).toBeInTheDocument()
+  })
 })

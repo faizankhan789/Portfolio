@@ -14,7 +14,6 @@ export const site: Site = {
   ],
   current: 'Currently at NexaQuanta — AI Engineer',
   email: 'faizankhan58396@gmail.com',
-  phone: '+92 317 4558424',
   github: 'https://github.com/faizankhan789',
   linkedin: 'https://www.linkedin.com/in/muhamad-faizan-khan-13656b1a0/',
   resume: 'Resume.pdf',

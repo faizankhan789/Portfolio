@@ -15,7 +15,7 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     name: 'Data & Infrastructure',
-    items: ['Python', 'Docker', 'Redis', 'PostgreSQL', 'AWS S3 / SQS', 'Azure AI', 'Kafka', 'FAISS', 'Pinecone', 'ChromaDB'],
+    items: ['Python', 'C++', 'Swift', 'SQL', 'Docker', 'Redis', 'PostgreSQL', 'AWS S3 / SQS', 'Azure AI', 'Kafka', 'FAISS', 'Pinecone', 'ChromaDB'],
   },
   {
     name: 'Engineering Practice',

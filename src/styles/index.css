@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* Self-hosted so first paint never waits on fonts.googleapis.com */
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("/fonts/instrument-serif-italic-latin.woff2") format("woff2");
+}
+
 :root {
   --bg: #0a0a0b;
   --fg: #ededed;

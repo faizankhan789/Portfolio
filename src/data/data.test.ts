@@ -8,7 +8,7 @@ import { credentials } from './credentials'
 describe('content data', () => {
   it('feature projects', () => {
     expect(projects.filter((p) => p.tier === 'feature').map((p) => p.slug)).toEqual([
-      'codebase-flow-video', 'resq-ai', 'pin-perfect', 'job-matching-pipeline', 'ai-document-processing', 'autism-platform',
+      'shipwright', 'codebase-flow-video', 'resq-ai', 'pin-perfect', 'job-matching-pipeline', 'ai-document-processing', 'autism-platform',
     ])
   })
   it('list projects', () => {
@@ -25,8 +25,14 @@ describe('content data', () => {
   })
   it('repo rules', () => {
     expect(projects.find((p) => p.slug === 'arabic-search')?.repo).toBeUndefined()
-    for (const p of projects.filter((p) => p.slug !== 'arabic-search'))
+    expect(projects.find((p) => p.slug === 'job-matching-pipeline')?.repo).toBeUndefined()
+    for (const p of projects.filter((p) => !['arabic-search', 'job-matching-pipeline'].includes(p.slug)))
       expect(p.repo?.startsWith('https://github.com/faizankhan789/')).toBe(true)
+  })
+  it('never links to a private repo or a dead demo', () => {
+    expect(projects.find((p) => p.slug === 'job-matching-pipeline')?.private).toBe(true)
+    expect(projects.find((p) => p.slug === 'autism-platform')?.live).toBeUndefined()
+    expect(JSON.stringify(site)).not.toMatch(/\+92|phone/i)
   })
   it('disclaimer and badge', () => {
     expect(projects.find((p) => p.slug === 'resq-ai')?.disclaimer).toBeTruthy()

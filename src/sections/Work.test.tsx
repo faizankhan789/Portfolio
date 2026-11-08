@@ -12,7 +12,7 @@ describe('Work', () => {
     expect(container.querySelector('section#work')).toBeInTheDocument()
     expect(screen.getByRole('heading', { level: 2, name: 'Selected work' })).toBeInTheDocument()
     const cards = container.querySelectorAll('[data-card]')
-    expect(cards).toHaveLength(6)
+    expect(cards).toHaveLength(7)
     const features = projects.filter((p) => p.tier === 'feature')
     cards.forEach((c, i) => {
       expect(c.textContent).toContain(String(i + 1).padStart(2, '0'))

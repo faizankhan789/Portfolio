@@ -5,6 +5,8 @@ export interface Project {
   summary: string
   stack: string[]
   repo?: string
+  /** Repo exists but is not public: render a "Private" note instead of a dead GitHub link. */
+  private?: boolean
   live?: string
   image?: string
   badge?: 'In progress'
@@ -47,7 +49,6 @@ export interface Site {
   highlights: { value: string; label: string }[]
   current: string
   email: string
-  phone: string
   github: string
   linkedin: string
   resume: string

@@ -77,6 +77,7 @@ export default function ProjectCard({ project: p, index }: Props) {
           </ul>
         )}
         {p.disclaimer && <p className="mt-4 font-mono text-xs text-muted">{p.disclaimer}</p>}
+        {p.private && <p className="mt-4 font-mono text-xs text-muted">Private repository — available on request.</p>}
         {(p.live || p.repo) && (
           <div className="mt-7 flex flex-wrap gap-3">
             {p.live && (

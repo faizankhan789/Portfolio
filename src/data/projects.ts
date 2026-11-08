@@ -4,6 +4,17 @@ const gh = (name: string) => `https://github.com/faizankhan789/${name}`
 
 export const projects: Project[] = [
   {
+    slug: 'shipwright',
+    title: 'Shipwright',
+    accentWord: 'wright',
+    summary:
+      'Claude Code plugin where a script, not a promise, decides when work is done: test-first builds, an expert council for hard decisions, and independent reviewers that must clear every finding.',
+    stack: ['Claude Code', 'Python', 'Multi-agent', 'Hooks'],
+    repo: gh('Shipwright'),
+    image: 'images/projects/shipwright.jpg',
+    tier: 'feature',
+  },
+  {
     slug: 'codebase-flow-video',
     title: 'Codebase Flow Video',
     accentWord: 'Flow',
@@ -43,7 +54,7 @@ export const projects: Project[] = [
     summary:
       'AI pipeline that ranks job listings against a résumé with LLMs, tailors the résumé and cover letter in LaTeX, and tracks everything in a Flask dashboard.',
     stack: ['LLMs', 'LaTeX', 'Flask', 'Python'],
-    repo: gh('LinkedIn_autoapply'),
+    private: true,
     tier: 'feature',
   },
   {
@@ -64,7 +75,6 @@ export const projects: Project[] = [
       'Bilingual (English/Urdu) learning and therapy-game platform for autistic children, built with React and Django REST.',
     stack: ['React', 'Django REST'],
     repo: gh('Autism'),
-    live: 'https://faizankhan789.github.io/Autism/',
     tier: 'feature',
   },
   {
